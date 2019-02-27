@@ -248,10 +248,7 @@ class Attribute(AttributeBase):
 
     @dimension.setter
     def dimension(self, dimension):
-        if dimension:
-            self.ref = dimension.name + '.' + str(self.name)
-        else:
-            self.ref = str(self.name)
+        self.ref = str(self.name)
         self._dimension = dimension
 
     def __deepcopy__(self, memo):
