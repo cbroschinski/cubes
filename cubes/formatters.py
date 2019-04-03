@@ -95,7 +95,8 @@ def csv_generator_p3(records, fields, include_header=True, header=None,
     def _row_string(row):
         writer.writerow(row)
         data = queue.getvalue()
-        queue.truncate(0)
+        queue.seek(0)
+        queue.truncate()
 
         return data
 
