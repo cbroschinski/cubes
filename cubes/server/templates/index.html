@@ -24,7 +24,7 @@
   {% if has_about %}
   <h2>About</h2>
 
-  {% if description %}<p>{{description}}</p>{% endif %}
+  {% if description %}<p>{{description|safe}}</p>{% endif %}
 
   <table id="info">
       {% if name %}<tr><th>Name</th><td>{{name}}</td></tr>{% endif %}
@@ -73,6 +73,11 @@
   <ul>
       <li><a href="http://packages.python.org/cubes/server.html">HTTP API documentation</a></li>
       <li><a href="http://cubes.databrewery.org">Cubes Project Home</a></li>
+      {% if references %}
+      {% for ref in references %}
+      <li><a href="{{ref.url}}">{{ref.label}}</a></li>
+      {% endfor %}
+      {% endif %}
   </ul>
   </footer>
 </body>

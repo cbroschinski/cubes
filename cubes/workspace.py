@@ -34,7 +34,8 @@ SLICER_INFO_KEYS = (
     "contributors", # List of contributors
     "visualizers",  # List of dicts with url and label of server's visualizers
     "keywords",     # List of keywords describing server's cubes
-    "related"       # List of dicts with related servers
+    "related",      # List of dicts with related servers
+    "references"    # additional web references 
 )
 
 def interpret_config_value(value):
